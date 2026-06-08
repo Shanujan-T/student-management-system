@@ -11,14 +11,14 @@ def create_student():
 def get_students():
     return student_controller.get_students()
 
-@student_bp.route('/api/students/<int:id>', methods=["GET"])
-def get_student(id):
-    return student_controller.get_student(id)
+@student_bp.route('/api/students/<int:student_id>', methods=["GET"])
+def get_student(student_id):
+    return student_controller.get_student(student_id)
 
-@student_bp.route('/api/students/<int:id>', methods=["PUT"])
-def update_student(id):
-    return student_controller.update_student_student(id)
+@student_bp.route('/api/students/<int:student_id>', methods=["PUT"])
+def update_student(student_id):
+    return student_controller.update_student_student(student_id)
 
-@student_bp.route('/api/students/<int:id>', methods=["DELETE"])
-def delete_student(id):
-    return student_controller.delete_student(id)
+@student_bp.route('/api/students/<int:student_id>', methods=["DELETE"])
+def delete_student(student_id):
+    return student_controller.delete_student(student_id)

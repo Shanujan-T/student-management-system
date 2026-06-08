@@ -27,7 +27,7 @@ def get_students():
     students_list=[]
     for student in students:
         students_list.append({
-            "id":student.id ,
+            "student_id":student.student_id ,
             "first_name":student.first_name ,
             "last_name":student.last_name ,
             "email":student.email ,
@@ -36,12 +36,12 @@ def get_students():
     return jsonify (students_list)
 
 
-def get_student(id):
-    student=Student.query.get(id)
+def get_student(student_id):
+    student=Student.query.get(student_id)
     if not student:
         return jsonify ({"error":"Student not found"}),404
     return jsonify ({
-        "id":student.id ,
+        "student_id":student.student_id ,
         "first_name":student.first_name ,
         "last_name":student.last_name ,
         "email":student.email ,
@@ -49,10 +49,10 @@ def get_student(id):
     })
 
 
-def update_student(id):
+def update_student(student_id):
     try:
         data=request.get_json()
-        student=Student.query.get(id)
+        student=Student.query.get(student_id)
         if not student:
             return jsonify ({"error":"Student not found"}),404
         student.first_name=data.get("first_name", student.first_name)
@@ -66,8 +66,8 @@ def update_student(id):
         return jsonify ({"error": (e)}), 400
     
 
-def delete_student(id):
-    student = Student.query.get(id)
+def delete_student(student_id):
+    student = Student.query.get(student_id)
     if not student:
         return jsonify({"message": "Student not Found"})
     db.session.delete(student)
