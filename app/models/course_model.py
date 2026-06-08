@@ -6,4 +6,4 @@ class Course(db.Model):
     course_code = db.Column(db.String(20), nullable=False)
     course_name = db.Column(db.String(100), nullable=False)
     credits = db.Column(db.Integer, nullable=False, unique=True)
-    lecturer_id = db.Column(db.Integer, nullable=False)
+    lecturer_id = db.Column(db.Integer, db.ForeignKey("lecturers.lecturer_id"), nullable=False)

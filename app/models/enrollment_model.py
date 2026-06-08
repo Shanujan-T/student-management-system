@@ -1,7 +1,7 @@
 from app import db
 
-class Entrollment(db.Model):
-    __tablename__="entrollments"
+class Enrollment(db.Model):
+    __tablename__="enrollments"
     enrollment_id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
     student_id = db.Column(db.Integer, db.ForeignKey("students.student_id"), nullable=False)
     course_id = db.Column(db.Integer, db.ForeignKey("courses.course_id"), nullable=False)
