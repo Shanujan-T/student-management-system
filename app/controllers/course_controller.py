@@ -28,10 +28,10 @@ def get_courses():
     for course in courses:
         courses_list.append({
             "course_id":course.course_id ,
-            "first_name":course.first_name ,
-            "last_name":course.last_name ,
-            "email":course.email ,
-            "date_of_birth":course.date_of_birth
+            "course_code":course.course_code ,
+            "course_name":course.course_name ,
+            "credits":course.credits ,
+            "lecturer_id":course.lecturer_id
         })
     return jsonify (courses_list)
 
