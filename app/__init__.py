@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
+from sqlalchemy import text
 
 
 db = SQLAlchemy()
@@ -7,3 +8,12 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     db.init_app(app)
+
+
+
+    with app.app_context():
+        db.session.execute(text("SELECT 1"))
+        print("SUCCESS: Database Connected Successfully")
+        db.create_all()
+
+    return app   
