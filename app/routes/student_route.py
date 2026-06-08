@@ -17,7 +17,7 @@ def get_student(student_id):
 
 @student_bp.route('/api/students/<int:student_id>', methods=["PUT"])
 def update_student(student_id):
-    return student_controller.update_student_student(student_id)
+    return student_controller.update_student(student_id)
 
 @student_bp.route('/api/students/<int:student_id>', methods=["DELETE"])
 def delete_student(student_id):

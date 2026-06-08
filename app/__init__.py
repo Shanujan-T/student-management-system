@@ -10,8 +10,10 @@ def create_app():
     db.init_app(app)
 
     from app.routes.student_route import student_bp
+    from app.routes.course_route import course_bp
 
     app.register_blueprint(student_bp)
+    app.register_blueprint(course_bp)
 
     with app.app_context():
         db.session.execute(text("SELECT 1"))
