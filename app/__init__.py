@@ -7,9 +7,12 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
+    
     db.init_app(app)
 
+    from app.routes.student_route import student_bp
 
+    app.register_blueprint(student_bp)
 
     with app.app_context():
         db.session.execute(text("SELECT 1"))
