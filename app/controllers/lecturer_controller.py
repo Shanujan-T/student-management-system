@@ -36,7 +36,7 @@ def get_lecturers():
     return jsonify (lecturers_list)
 
 
-def get_student(lecturer_id):
+def get_lecturer(lecturer_id):
     lecturer=Lecturer.query.get(lecturer_id)
     if not lecturer:
         return jsonify ({"error":"Lecturer not found"}),404
