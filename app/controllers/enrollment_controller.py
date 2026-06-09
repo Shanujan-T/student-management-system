@@ -19,7 +19,7 @@ def create_enrollment():
     
     except Exception as e:
         db.session.rollback()
-        return jsonify ({"error":"str(e)"})
+        return jsonify ({"error":str(e)})
     
 
 def get_enrollments():
