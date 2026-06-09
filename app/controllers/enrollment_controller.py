@@ -11,7 +11,7 @@ def create_enrollment():
             student_id=data["student_id"],
             course_id=data["course_id"],
             enrollment_date=data["enrollment_date"],
-            status=data["status"]
+            status=data.get("status", "Active")
         )
         db.session.add(new_enrollment)
         db.session.commit()
