@@ -17,10 +17,12 @@ def create_app():
     from app.routes.student_route import student_bp
     from app.routes.course_route import course_bp
     from app.routes.lecturer_route import lecturer_bp
+    from app.routes.enrollment_route import enrollment_bp
 
     app.register_blueprint(student_bp)
     app.register_blueprint(course_bp)
     app.register_blueprint(lecturer_bp)
+    app.register_blueprint(enrollment_bp)
 
     with app.app_context():
         db.session.execute(text("SELECT 1"))
