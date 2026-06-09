@@ -27,7 +27,7 @@ def get_enrollments():
     enrollments_list=[]
     for enrollment in enrollments:
         enrollments_list.append({
-            "enrollment_id":entrollment.enrollment_id ,
+            "enrollment_id":enrollment.enrollment_id ,
             "student_id":enrollment.student_id ,
             "course_id":enrollment.course_id ,
             "enrollment_date":enrollment.enrollment_date ,
